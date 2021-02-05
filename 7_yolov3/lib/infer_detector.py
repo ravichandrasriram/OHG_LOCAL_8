@@ -137,7 +137,7 @@ class Infer():
         #    os.mkdir(out);
 
         #os.system("cp " + img_path + " " + source + "/");
-        shutil.copyfile(img_path, source) 
+        shutil.copyfile(img_path, source+"/") 
 
         self.system_dict["local"]["dataset"] = LoadImages(source, 
                                                             img_size=self.system_dict["params"]["img_size"], 
