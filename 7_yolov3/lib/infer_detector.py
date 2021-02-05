@@ -124,7 +124,7 @@ class Infer():
         save_img = self.system_dict["params"]["save_img"];
         out = self.system_dict["params"]["output"];
         source = "tmp";
-        print('Output path:'% out);
+        print('Output path: %s'% out);
 
         if(not os.path.isdir(source)):
             os.mkdir(source);
@@ -215,7 +215,7 @@ class Infer():
                         cv2.imwrite(save_path, im0)
                         cv2.imwrite("output.jpg", im0);
 
-        print('save path: ' % save_path);
+        print('save path: %s' % save_path);
         if save_txt or save_img:
             print('Results saved to %s' % os.getcwd() + os.sep + out)
             if platform == 'darwin':  # MacOS
