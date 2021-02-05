@@ -3,7 +3,7 @@ from sys import platform
 from models import * 
 from utils.datasets import *
 from utils.utils import *
-
+import shutil
 
 class Infer():
     '''
@@ -136,7 +136,8 @@ class Infer():
         #    os.system("rm -r " + out);
         #    os.mkdir(out);
 
-        os.system("cp " + img_path + " " + source + "/");
+        #os.system("cp " + img_path + " " + source + "/");
+        shutil.copyfile(img_path, source) 
 
         self.system_dict["local"]["dataset"] = LoadImages(source, 
                                                             img_size=self.system_dict["params"]["img_size"], 
