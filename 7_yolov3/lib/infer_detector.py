@@ -124,7 +124,6 @@ class Infer():
         save_img = self.system_dict["params"]["save_img"];
         out = self.system_dict["params"]["output"];
         source = "tmp";
-        print(out);
 
         if(not os.path.isdir(source)):
             os.mkdir(source);
