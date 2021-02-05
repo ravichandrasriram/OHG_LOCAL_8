@@ -123,7 +123,7 @@ class Infer():
         save_txt = self.system_dict["params"]["save_txt"];
         save_img = self.system_dict["params"]["save_img"];
         out = self.system_dict["params"]["output"];
-        source = "/content/tmp";
+        source = "tmp";
         if(not os.path.isdir(source)):
             os.mkdir(source);
         else:
@@ -137,7 +137,7 @@ class Infer():
         #    os.mkdir(out);
 
         #os.system("cp " + img_path + " " + source + "/");
-        shutil.copyfile(img_path, source) 
+        shutil.copyfile(img_path, source+"/"+os.path.basename(img_path)) 
 
         self.system_dict["local"]["dataset"] = LoadImages(source, 
                                                             img_size=self.system_dict["params"]["img_size"], 
