@@ -21,7 +21,7 @@ class Infer():
 
 
         self.system_dict["params"] = {};
-        self.system_dict["params"]["output"] = "output";
+        self.system_dict["params"]["output"] = "/content/drive/My Drive/Datasets/Results/OHG_RES/batch-8/Outputs";
         
 
         self.system_dict["params"]["fourcc"] = "mp4v";
@@ -131,11 +131,11 @@ class Infer():
             os.system("rm -r " + source);
             os.mkdir(source);
 
-        if(not os.path.isdir(out)):
-            os.mkdir(out);
-        else:
-            os.system("rm -r " + out);
-            os.mkdir(out);
+        #if(not os.path.isdir(out)):
+        #    os.mkdir(out);
+        #else:
+        #    os.system("rm -r " + out);
+        #    os.mkdir(out);
 
         os.system("cp " + img_path + " " + source + "/");
 
