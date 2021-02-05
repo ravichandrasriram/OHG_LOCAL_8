@@ -21,7 +21,7 @@ class Infer():
 
 
         self.system_dict["params"] = {};
-        self.system_dict["params"]["output"] = "/content/drive/My Drive/Datasets/Results/OHG_RES/batch-8/Outputs";
+        self.system_dict["params"]["output"] = "output";
         
 
         self.system_dict["params"]["fourcc"] = "mp4v";
