@@ -74,10 +74,10 @@ class Detector():
         Returns:
             None
         '''
-        self.system_dict["fixed_params"]["wdir"] = '/content/drive/My Drive/Datasets/Results/DLA_OHG/BATCH_SIZE_8/weights' + os.sep  
+        self.system_dict["fixed_params"]["wdir"] = '/content/drive/My Drive/Datasets/Results/OHG_RES/batch-8' + os.sep  
         self.system_dict["fixed_params"]["last"] = self.system_dict["fixed_params"]["wdir"] + 'last.pt'
         self.system_dict["fixed_params"]["best"] = self.system_dict["fixed_params"]["wdir"] + 'best.pt'
-        self.system_dict["fixed_params"]["results_file"] = '/content/drive/My Drive/Datasets/Results/DLA_OHG/BATCH_SIZE_8/results.txt'
+        self.system_dict["fixed_params"]["results_file"] = '/content/drive/My Drive/Datasets/Results/OHG_RES/batch-8/results.txt'
 
         self.system_dict["fixed_params"]["hyp"] = {'giou': 3.54,  # giou loss gain
                                                    'cls': 37.4,  # cls loss gain
@@ -786,7 +786,7 @@ class Detector():
             if len(n):
                 n = '_' + n if not n.isnumeric() else n
                 fresults, flast, fbest = 'results%s.txt' % n, 'last%s.pt' % n, 'best%s.pt' % n
-                os.rename('/content/drive/My Drive/Datasets/Results/DLA_OHG/BATCH_SIZE_8/results.txt', fresults)
+                os.rename('/content/drive/My Drive/Datasets/Results/OHG_RES/batch-8/results.txt', fresults)
                 os.rename(self.system_dict["fixed_params"]["wdir"] + 'last.pt', 
                     self.system_dict["fixed_params"]["wdir"] + flast) if os.path.exists(self.system_dict["fixed_params"]["wdir"] + 'last.pt') else None
                 os.rename(self.system_dict["fixed_params"]["wdir"] + 'best.pt', 
