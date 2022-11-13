@@ -423,12 +423,12 @@ class Detector():
                 self.system_dict["local"]["best_fitness"] = chkpt['best_fitness']
 
             # load results
-            #if chkpt.get('training_results') is not None:
-            #    with open(self.system_dict["fixed_params"]["results_file"], 'w') as file:
-            #        file.write(chkpt['training_results'])
+            if chkpt.get('training_results') is not None:
+                with open(self.system_dict["fixed_params"]["results_file"], 'w') as file:
+                    file.write(chkpt['training_results'])
 
-            #self.system_dict["local"]["start_epoch"] = chkpt['epoch'] + 1
-            self.system_dict["local"]["start_epoch"] = 0
+            self.system_dict["local"]["start_epoch"] = chkpt['epoch'] + 1
+            #self.system_dict["local"]["start_epoch"] = 0
             del chkpt
 
         elif len(self.system_dict["params"]["weights"]) > 0:  # darknet format
